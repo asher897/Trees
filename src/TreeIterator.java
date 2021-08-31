@@ -6,10 +6,7 @@ public class TreeIterator<T extends Comparable<T>> {
 
     public TreeIterator(BinarySearchTree<T> tree) {
         this.current = tree.getRoot();
-        while (!(this.current.getLeft() != null)) {
-            this.iter.add(this.current);
-            this.current = this.current.getLeft();
-        }
+        traverse(this.current);
     }
 
     public BinaryNode<T> next() {

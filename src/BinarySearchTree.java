@@ -1,4 +1,3 @@
-
 /**
  * This class defines a Binary Search Tree (BST) and makes use of the
  * BinaryNode<T> class
@@ -361,7 +360,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     public void merge(BinarySearchTree<T> tree) {
+        TreeIterator<T> iter = new TreeIterator<>(tree);
 
+        while (iter.hasNext()) {
+            this.insert(iter.next().getData());
+        }
     }
 
 }
