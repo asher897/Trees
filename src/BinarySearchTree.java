@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * This class defines a Binary Search Tree (BST) and makes use of the
  * BinaryNode<T> class
@@ -359,12 +361,47 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     }
 
+    /**
+     * This method merges two BSTs into one.
+     * 
+     * @param tree The tree to merge with.
+     */
     public void merge(BinarySearchTree<T> tree) {
         TreeIterator<T> iter = new TreeIterator<>(tree);
 
         while (iter.hasNext()) {
             this.insert(iter.next().getData());
         }
+    }
+
+    /**
+     * This method adds a list of the same type to the BST.
+     * 
+     * @param list The list to add.
+     */
+    public void addList(List<T> list) {
+        ListIterator<T> iter = list.listIterator();
+
+        while (iter.hasNext()) {
+            insert(iter.next());
+        }
+    }
+
+    /**
+     * This method adds the data from the BST into a List (can be of type
+     * LinkedList, ArrayList, etc).
+     * 
+     * @param list The list to add the data to.
+     * @return The list with all that data fron the BST.
+     */
+    public List<T> toList(List<T> list) {
+        TreeIterator<T> iter = new TreeIterator<>(this);
+
+        while (iter.hasNext()) {
+            list.add(iter.next().getData());
+        }
+
+        return list;
     }
 
 }
