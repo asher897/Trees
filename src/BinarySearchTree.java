@@ -375,7 +375,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     /**
-     * This method adds a list of the same type to the BST.
+     * This method adds the contents from a List of the same type to the BST.
      * 
      * @param list The list to add.
      */
@@ -388,7 +388,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     /**
-     * This method adds the data from the BST into a List (can be of type
+     * This method adds the contents from the BST into a List (can be of type
      * LinkedList, ArrayList, etc).
      * 
      * @param list The list to add the data to.
