@@ -360,4 +360,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
     }
 
+    public void merge(BinarySearchTree<T> tree) {
+
+    }
+
 }
