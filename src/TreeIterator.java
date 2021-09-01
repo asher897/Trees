@@ -20,10 +20,6 @@ public class TreeIterator<T extends Comparable<T>> {
         return this.iter.peek();
     }
 
-    public boolean isEnd() {
-        return this.iter.isEmpty();
-    }
-
     public boolean hasNext() {
         return !this.iter.isEmpty();
     }
