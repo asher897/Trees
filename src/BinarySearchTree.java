@@ -370,7 +370,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
         TreeIterator<T> iter = new TreeIterator<>(tree);
 
         while (iter.hasNext()) {
-            this.insert(iter.next().getData());
+            this.insert(iter.current().getData());
+            iter.next();
         }
     }
 
@@ -398,7 +399,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
         TreeIterator<T> iter = new TreeIterator<>(this);
 
         while (iter.hasNext()) {
-            list.add(iter.next().getData());
+            list.add(iter.current().getData());
+            iter.next();
         }
 
         return list;

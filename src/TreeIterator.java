@@ -6,26 +6,27 @@ public class TreeIterator<T extends Comparable<T>> {
 
     public TreeIterator(BinarySearchTree<T> tree) {
         this.current = tree.getRoot();
+        this.iter = new Stack<>();
         traverse(this.current);
+        System.out.println("HELLO");
     }
 
-    public BinaryNode<T> next() {
-        BinaryNode<T> temp = this.iter.pop();
+    public void next() {
+        BinaryNode<T> temp = this.iter.pop().getRight();
         traverse(temp);
-        return temp;
     }
 
-    public boolean isEnd() {
-        return this.current.isLeaf();
+    public BinaryNode<T> current() {
+        return this.iter.peek();
     }
 
     public boolean hasNext() {
-        return iter.peek() != null;
+        return !this.iter.isEmpty();
     }
 
     private void traverse(BinaryNode<T> node) {
-        while (!(node.getLeft() != null)) {
-            this.iter.add(node);
+        while (node != null) {
+            this.iter.push(node);
             node = node.getLeft();
         }
     }
