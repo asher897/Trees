@@ -232,9 +232,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
             printAllData(node.getLeft());
 
-            printAllData(node.getRight());
-
             node.printData();
+
+            printAllData(node.getRight());
 
         }
 

@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class BinaryTest {
 
     public static void main(String[] args) {
@@ -6,7 +8,7 @@ public class BinaryTest {
 
         int[] data_two = { 53, 41, 6, 34, 21, 85, 67, 4, 17, 13 };
 
-        AVLTree<Integer> tree_one = new AVLTree<>();
+        BinarySearchTree<Integer> tree_one = new BinarySearchTree<>();
 
         for (Integer i : data) {
 
@@ -14,7 +16,7 @@ public class BinaryTest {
 
         }
 
-        AVLTree<Integer> tree_two = new AVLTree<>();
+        BinarySearchTree<Integer> tree_two = new BinarySearchTree<>();
 
         for (Integer i : data_two) {
 
@@ -22,19 +24,24 @@ public class BinaryTest {
 
         }
 
-        tree_one.printAllData();
-        System.out.println("Done");
+        // tree_one.printAllData();
+        // System.out.println("Done");
 
-        tree_two.printAllData();
-        System.out.println("Done2");
+        // tree_two.printAllData();
+        // System.out.println("Done2");
 
         tree_one.merge(tree_two);
 
-        tree_one.printAllData();
+        List<Integer> list = new ArrayList<>();
+        tree_one.toList(list);
+
+        for (Integer i : list) {
+            System.out.println(i);
+        }
         System.out.println("Done");
 
-        // tree.printAllData();
-        // System.out.println("Done");
+        tree_one.printAllData();
+        System.out.println("Done");
 
         // tree.remove(9);
 
